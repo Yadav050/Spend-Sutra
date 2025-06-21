@@ -13,7 +13,7 @@ A modern, responsive expense tracking application built with React, TypeScript, 
 
 ## 🚀 Live Demo
 
-[Add your deployed link here]
+https://spendsutra.vercel.app/
 
 ## 🛠️ Tech Stack
 
