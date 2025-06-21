@@ -8,7 +8,7 @@ const __dirname = dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
-  base: process.env.NODE_ENV === 'production' ? '/spend-sutra/' : '/',
+  // base: '/Spend-Sutra/', // This line is for GitHub Pages. Vercel sets this automatically.
   resolve: {
     alias: {
       '@': resolve(__dirname, './src')
