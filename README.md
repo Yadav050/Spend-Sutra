@@ -28,7 +28,7 @@ A modern, responsive expense tracking application built with React, TypeScript, 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/spend-sutra.git
+   git clone https://github.com/Yadav050/spend-sutra.git
    cd spend-sutra
    ```
 
@@ -81,7 +81,9 @@ A modern, responsive expense tracking application built with React, TypeScript, 
 
 ## 📱 Screenshots
 
-[Add screenshots of your application here]
+![Entry intro](https://github.com/user-attachments/assets/a7ab146b-b25a-4b2e-b497-de5e11f39959)
+![landing2](https://github.com/user-attachments/assets/c160ca69-e35d-45cc-b2cb-73e6c1db90fb)
+![landing1](https://github.com/user-attachments/assets/f08248f0-b137-491f-97e3-3934cdcc20a5)
 
 ## 🏗️ Project Structure
 
@@ -142,9 +144,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+**Anmol Yadav**
+- LinkedIn: [Your LinkedIn](www.linkedin.com/in/anmol-yadav050)
 
 ## 🙏 Acknowledgments
 
