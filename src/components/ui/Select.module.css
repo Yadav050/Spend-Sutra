@@ -1,0 +1,105 @@
+.selectTrigger {
+  height: 2.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.5rem;
+  border: 1.5px solid #e0e7ff;
+  background: #f8fafc;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 1px 4px 0 rgba(99,102,241,0.06);
+  cursor: pointer;
+}
+.selectTrigger:focus, .selectTrigger[data-state="open"] {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px #6366f1;
+  background: #fff;
+}
+.chevronIcon {
+  height: 1.2rem;
+  width: 1.2rem;
+  opacity: 0.7;
+  transition: transform 0.2s;
+}
+.selectTrigger[data-state="open"] .chevronIcon {
+  transform: rotate(180deg);
+}
+
+.selectContent {
+  z-index: 1000 !important;
+  position: absolute !important;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 32px 0 rgba(99,102,241,0.18);
+  border: 1.5px solid #e0e7ff;
+  min-width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0;
+  animation: dropdownFadeIn 0.18s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.selectViewport {
+  padding: 0.25rem 0;
+}
+
+.selectItem {
+  padding: 0.7rem 1.5rem 0.7rem 2.5rem;
+  font-size: 1rem;
+  color: #3730a3;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.18s, color 0.18s;
+  margin: 0.1rem 0.25rem;
+  outline: none;
+  border: none;
+  background: none;
+}
+.selectItem[data-highlighted], .selectItem:hover {
+  background: linear-gradient(90deg, #6366f1 0%, #a78bfa 100%);
+  color: #fff;
+}
+.selectItem[data-state="checked"] {
+  background: #e0e7ff;
+  color: #3730a3;
+  font-weight: 600;
+}
+
+.itemIndicator {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkIcon {
+  color: #6366f1;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.selectLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #6366f1;
+  padding: 0.5rem 1.5rem 0.25rem 1.5rem;
+}
+
+.selectSeparator {
+  height: 1px;
+  background: #e0e7ff;
+  margin: 0.25rem 0.5rem;
+  border-radius: 1px;
+} 
