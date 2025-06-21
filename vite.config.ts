@@ -8,6 +8,7 @@ const __dirname = dirname(__filename);
 
 export default defineConfig({
   plugins: [react()],
+  base: process.env.NODE_ENV === 'production' ? '/spend-sutra/' : '/',
   resolve: {
     alias: {
       '@': resolve(__dirname, './src')

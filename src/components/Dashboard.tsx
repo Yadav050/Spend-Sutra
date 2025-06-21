@@ -22,7 +22,7 @@ const categoryIcons: Record<string, JSX.Element> = {
   other: <CircleHelp style={{ marginRight: 6, color: '#6366f1' }} size={18} />,
 };
 
-export function Dashboard({ user, onLogout, section }: { user: User, onLogout: () => void, section?: string }) {
+export function Dashboard({ user, onLogout, onUserUpdate, section }: { user: User, onLogout: () => void, onUserUpdate: (user: User) => void, section?: string }) {
   const [expenses, setExpenses] = useState<Expense[]>(user.expenses)
   const [formData, setFormData] = useState({
     amount: '',
@@ -44,6 +44,8 @@ export function Dashboard({ user, onLogout, section }: { user: User, onLogout: (
   useEffect(() => {
     const updatedUser = { ...user, expenses }
     database.updateUser(updatedUser)
+    localStorage.setItem('spendSutraCurrentUser', JSON.stringify(updatedUser))
+    onUserUpdate(updatedUser)
     calculatePrediction()
   }, [expenses])
 

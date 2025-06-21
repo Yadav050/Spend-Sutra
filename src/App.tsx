@@ -9,17 +9,17 @@ import logo from './logo.png'
 import styles from './App.module.css'
 // import './index.css'
 
-function AddExpensePage({ user, onLogout }: any) {
-  return <Dashboard user={user} onLogout={onLogout} section="add" />;
+function AddExpensePage({ user, onLogout, onUserUpdate }: any) {
+  return <Dashboard user={user} onLogout={onLogout} onUserUpdate={onUserUpdate} section="add" />;
 }
-function SummaryPage({ user, onLogout }: any) {
-  return <Dashboard user={user} onLogout={onLogout} section="summary" />;
+function SummaryPage({ user, onLogout, onUserUpdate }: any) {
+  return <Dashboard user={user} onLogout={onLogout} onUserUpdate={onUserUpdate} section="summary" />;
 }
-function RecentExpensesPage({ user, onLogout }: any) {
-  return <Dashboard user={user} onLogout={onLogout} section="recent" />;
+function RecentExpensesPage({ user, onLogout, onUserUpdate }: any) {
+  return <Dashboard user={user} onLogout={onLogout} onUserUpdate={onUserUpdate} section="recent" />;
 }
-function ProfilePage({ user, onLogout }: any) {
-  return <Dashboard user={user} onLogout={onLogout} section="profile" />;
+function ProfilePage({ user, onLogout, onUserUpdate }: any) {
+  return <Dashboard user={user} onLogout={onLogout} onUserUpdate={onUserUpdate} section="profile" />;
 }
 
 export default function App() {
@@ -33,10 +33,16 @@ export default function App() {
     setCurrentUser(user);
     localStorage.setItem('spendSutraCurrentUser', JSON.stringify(user));
   };
+  
   const handleLogout = () => {
     setCurrentUser(null);
     setAuthMode('welcome');
     localStorage.removeItem('spendSutraCurrentUser');
+  };
+
+  const handleUserUpdate = (updatedUser: User) => {
+    setCurrentUser(updatedUser);
+    localStorage.setItem('spendSutraCurrentUser', JSON.stringify(updatedUser));
   };
 
   const handleAuthModeSelect = (mode: 'login' | 'signup') => {
@@ -54,10 +60,10 @@ export default function App() {
     <Router>
       <div className={styles.bodyPad}>
         <Routes>
-          <Route path="/add" element={<AddExpensePage user={currentUser} onLogout={handleLogout} />} />
-          <Route path="/summary" element={<SummaryPage user={currentUser} onLogout={handleLogout} />} />
-          <Route path="/recent" element={<RecentExpensesPage user={currentUser} onLogout={handleLogout} />} />
-          <Route path="/profile" element={<ProfilePage user={currentUser} onLogout={handleLogout} />} />
+          <Route path="/add" element={<AddExpensePage user={currentUser} onLogout={handleLogout} onUserUpdate={handleUserUpdate} />} />
+          <Route path="/summary" element={<SummaryPage user={currentUser} onLogout={handleLogout} onUserUpdate={handleUserUpdate} />} />
+          <Route path="/recent" element={<RecentExpensesPage user={currentUser} onLogout={handleLogout} onUserUpdate={handleUserUpdate} />} />
+          <Route path="/profile" element={<ProfilePage user={currentUser} onLogout={handleLogout} onUserUpdate={handleUserUpdate} />} />
           <Route path="*" element={<Navigate to="/add" />} />
         </Routes>
       </div>
